@@ -167,23 +167,23 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload latest to release
-      uses: softprops/action-gh-release@master
+      uses: softprops/action-gh-release@v2
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.txt
+        body_path: ${{ env.FIRMWARE }}/release.txt
         files: ${{ env.FIRMWARE }}/*
 
     - name: Upload firmware to release
-      uses: softprops/action-gh-release@master
+      uses: softprops/action-gh-release@v2
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ env.TAG_NAME }}
-        body_path: release.txt
+        body_path: ${{ env.FIRMWARE_AX3000T }}/release.txt
         files: ${{ env.FIRMWARE_AX3000T }}/*
 
     - name: Delete releases and workflows runs
