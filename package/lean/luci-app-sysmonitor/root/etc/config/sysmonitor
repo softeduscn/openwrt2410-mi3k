@@ -19,7 +19,7 @@ config sysmonitor 'sysmonitor'
 	option pptp '0'
 	option dhcp '0'
 	list vpn '192.168.1.1'
-	option firmware 'https://github.com/softeduscn/openwrt-mi3k/releases/download/AX3000T/openwrt-mediatek-filogic-xiaomi_mi-router-ax3000t-squashfs-sysupgrade.bin'
+	option firmware 'https://gh-proxy.com/github.com/softeduscn/openwrt2410-mi3k/releases/download/AX3000T/openwrt-mediatek-filogic-xiaomi_mi-router-ax3000t-squashfs-sysupgrade.bin'
 
 config host_list
 	option hostname 'R3P'
